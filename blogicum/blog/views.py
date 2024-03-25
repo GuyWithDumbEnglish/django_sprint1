@@ -54,7 +54,7 @@ def index(request):
 
 def post_detail(request, id):
     if id not in posts_by_id:
-        return Http404
+        return Http404('Error 404. Page not found')
     return render(request, 'blog/detail.html', {'post': posts_by_id[id]})
 
 
